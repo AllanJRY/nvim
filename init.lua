@@ -83,6 +83,11 @@ I hope you enjoy your Neovim journey,
 
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
+--
+
+-- --------------------------------------------------------------------
+-- EDITOR CONFIG
+-- --------------------------------------------------------------------
 
 -- Set <space> as the leader key
 -- See `:help mapleader`
@@ -100,9 +105,19 @@ vim.g.have_nerd_font = false
 
 -- Make line numbers default
 vim.opt.number = true
+
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
+
+-- Set highlight on search
+vim.o.hlsearch = false
+-- While typing a search command, show where the pattern, as it was typed so
+-- far, matches.
+vim.o.incsearch = true
+
+-- Set text wrapping
+vim.o.wrap = false
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -127,6 +142,11 @@ vim.opt.smartcase = true
 
 -- Keep signcolumn on by default
 vim.opt.signcolumn = 'yes'
+
+-- 'colorcolumn'`  is a comma-separated list of screen columns that are
+-- highlighted with ColorColumn |hl-ColorColumn|. Useful to align text.
+-- Will make screen redrawing slower.
+vim.opt.colorcolumn = '100'
 
 -- Decrease update time
 vim.opt.updatetime = 250
@@ -153,6 +173,24 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+
+-- Number of space that a tab in the file make.
+vim.opt.tabstop = 4
+-- Number of spaces that a <Tab> counts for while performing editing operations,
+-- like inserting a <Tab> or using <BS>.
+vim.opt.softtabstop = 4
+-- Number of spaces to use for each step of (auto)indent.
+vim.opt.shiftwidth = 4
+-- In Insert mode: Use the appropriate number of spaces to insert a <Tab>
+vim.opt.expandtab = true
+-- Do smart autoindenting when starting a new line.
+vim.opt.smartindent = true
+
+-- NOTE: You should make sure your terminal supports this
+vim.o.termguicolors = true
+
+-- Set completeopt to have a better completion experience
+vim.o.completeopt = 'menuone,noselect'
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
