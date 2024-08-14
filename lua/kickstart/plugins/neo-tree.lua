@@ -15,11 +15,14 @@ return {
   },
   opts = {
     filesystem = {
+      hijack_netrw_behavior = 'open_current',
       window = {
-        position = 'float',
+        position = 'left',
+        -- position = 'float',
         popup_border_style = 'rounded',
         mappings = {
           ['\\'] = 'close_window',
+          ['P'] = { 'toggle_preview', config = { use_float = false } },
         },
       },
     },

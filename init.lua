@@ -192,6 +192,26 @@ vim.o.termguicolors = true
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
+-- Disable Netrw explorer
+vim.g.loaded_netrwPlugin = 0
+
+-- Open Neotree automatically
+vim.api.nvim_create_augroup('neotree', {})
+vim.api.nvim_create_autocmd('VimEnter', {
+  desc = 'Open Neotree automatically',
+  group = 'neotree',
+  callback = function()
+    -- Give the same behavior as Netrw on opening nvim with a path.
+    -- local stats = vim.loop.fs_stat(vim.api.nvim_buf_get_name(0))
+    -- if stats and stats.type == 'directory' then
+    --   require('neo-tree.setup.netrw').hijack()
+    -- end
+    if vim.fn.argc() == 0 then
+      vim.cmd 'Neotree toggle'
+    end
+  end,
+})
+
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
