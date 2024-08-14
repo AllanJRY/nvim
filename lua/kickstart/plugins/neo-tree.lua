@@ -25,6 +25,14 @@ return {
           ['P'] = { 'toggle_preview', config = { use_float = false } },
         },
       },
+      filtered_items = {
+        always_show = { -- remains visible even if other settings would normally hide it
+          'todos.md',
+        },
+        always_show_by_pattern = { -- uses glob style patterns
+          '.env*',
+        },
+      },
     },
   },
 }

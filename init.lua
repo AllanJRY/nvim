@@ -195,6 +195,11 @@ vim.o.termguicolors = true
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
+-- Setting the font for Neovide
+if vim.g.neovide then
+  vim.o.guifont = 'FiraCode Nerd Font Mono:h11'
+end
+
 -- Disable Netrw explorer
 vim.g.loaded_netrwPlugin = 0
 
@@ -962,7 +967,7 @@ require('lazy').setup({
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
   -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
+  require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   -- require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.neo-tree',
