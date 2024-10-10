@@ -836,16 +836,16 @@ require('lazy').setup({
           -- Accept ([y]es) the completion.
           --  This will auto-import if your LSP supports it.
           --  This will expand snippets if the LSP sent a snippet.
-          -- ['<C-y>'] = cmp.mapping.confirm { select = true },
-          ['<Tab>'] = cmp.mapping(function(fallback)
-            if luasnip.expand_or_jumpable() then
-              luasnip.expand_or_jump()
-            elseif cmp.visible() then
-              cmp.confirm { select = true }
-            else
-              fallback()
-            end
-          end, { 'i', 's' }),
+          ['<C-y>'] = cmp.mapping.confirm { select = true },
+          -- ['<Tab>'] = cmp.mapping(function(fallback)
+          --   if luasnip.expand_or_jumpable() then
+          --     luasnip.expand_or_jump()
+          --   elseif cmp.visible() then
+          --     cmp.confirm { select = true }
+          --   else
+          --     fallback()
+          --   end
+          -- end, { 'i', 's' }),
           -- If you prefer more traditional completion keymaps,
           -- you can uncomment the following lines
           --['<CR>'] = cmp.mapping.confirm { select = true },
